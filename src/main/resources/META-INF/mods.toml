@@ -1,0 +1,47 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="MIT"
+issueTrackerURL=""
+
+[[mods]]
+modId="autoreconnect"
+version="${file.jarVersion}"
+displayName="Auto Reconnect"
+updateJSONURL="" 
+#displayURL="" 
+logoFile="autoreconnect_logo.png" 
+credits="RDM Studios"
+authors="RDM Studios"
+displayTest="MATCH_VERSION"
+#configBackground="autoreconnect:textures/"
+description='''Allows for configurable auto-reconnecting to servers.'''
+
+# Base
+[[dependencies.autoreconnect]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[44,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.autoreconnect]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3,1.20)"
+    ordering="NONE"
+    side="BOTH"
+
+# Extras
+[[dependencies.autoreconnect]] 
+    modId="configured" 
+    mandatory=false
+    versionRange="[2.0.2,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.autoreconnect]] 
+    modId="catalogue" 
+    mandatory=false
+    versionRange="[1.7.0,)"
+    ordering="NONE"
+    side="BOTH"
