@@ -22,14 +22,14 @@ description='''Allows for configurable auto-reconnecting to servers.'''
     mandatory=true 
     versionRange="[44,)"
     ordering="NONE"
-    side="BOTH"
+    side="CLIENT"
 
 [[dependencies.autoreconnect]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.3,1.20)"
     ordering="NONE"
-    side="BOTH"
+    side="CLIENT"
 
 # Extras
 [[dependencies.autoreconnect]] 
@@ -37,11 +37,11 @@ description='''Allows for configurable auto-reconnecting to servers.'''
     mandatory=false
     versionRange="[2.0.2,)"
     ordering="NONE"
-    side="BOTH"
+    side="CLIENT"
 
 [[dependencies.autoreconnect]] 
     modId="catalogue" 
     mandatory=false
     versionRange="[1.7.0,)"
     ordering="NONE"
-    side="BOTH"
+    side="CLIENT"

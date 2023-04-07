@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "examplemod resources",
+        "description": "Auto Reconnect is a mod which allows for configurable automatic re-connection to servers.",
         "pack_format": 12,
         "forge:resource_pack_format": 12,
         "forge:data_pack_format": 10
