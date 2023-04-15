@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[44,)"
 license="MIT"
-issueTrackerURL=""
+issueTrackerURL="https://github.com/RDM-Studios/AutoReconnect/issues"
 
 [[mods]]
 modId="autoreconnect"
