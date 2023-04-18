@@ -26,5 +26,31 @@ public enum BlacklistedServer {
 	public String getBlacklistReason() {
 		return reason;
 	}
+	
+	public static BlacklistedServer getBlacklistedServerByName(String serverName) {
+		BlacklistedServer target = null;
+		
+		for (BlacklistedServer tServer : values()) {
+			if (tServer.getServerName().equals(serverName)) {
+				target = tServer;
+				break;
+			}
+		}
+		
+		return target;
+	}
+	
+	public static BlacklistedServer getBlacklistedServerByIp(String serverIp) {
+		BlacklistedServer target = null;
+		
+		for (BlacklistedServer tServer : values()) {
+			if (tServer.getServerIp().equals(serverIp)) {
+				target = tServer;
+				break;
+			}
+		}
+		
+		return target;
+	}
 
 }

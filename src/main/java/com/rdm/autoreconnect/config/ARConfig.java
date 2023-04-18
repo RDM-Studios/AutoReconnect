@@ -1,5 +1,6 @@
 package com.rdm.autoreconnect.config;
 
+import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
 import net.minecraftforge.common.ForgeConfigSpec.Builder;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.common.ForgeConfigSpec.IntValue;
@@ -7,6 +8,9 @@ import net.minecraftforge.common.ForgeConfigSpec.IntValue;
 public class ARConfig {	
 	public final ConfigValue<String> targetServerIP;
 	public final ConfigValue<String> fallbackServerIP;
+	public final ConfigValue<String> fallbackServerName;
+	
+	public final BooleanValue isFallbackServerLan;
 	
 	public final IntValue maxReconnectAttempts;
 	public final IntValue maxFallbackReconnectAttempts;
@@ -22,6 +26,12 @@ public class ARConfig {
 		fallbackServerIP = configBuilder
 				.comment("The fallback server to auto-reconnect to, in case of failure in auto-reconnecting to the original target server. Is localhost by default.")
 				.define("Fallback Server IP", "localhost");
+		fallbackServerName = configBuilder
+				.comment("The fallback server name to auto-reconnect to, in case of failure in auto-reconnecting to the original target server. Is localhost by default. MUST MATCH THE EXACT SERVER NAME!")
+				.define("Fallback Server Name", "localhost");
+		isFallbackServerLan = configBuilder
+				.comment("Specify whether or not the fallback server to reconnect to is a LAN server.")
+				.define("Is Fallback Server LAN", false);
 		maxReconnectAttempts = configBuilder
 				.comment("The maximum amount of times Auto Reconnect will attempt to reconnect to the main target server.")
 				.defineInRange("Max Reconnect Attempts", 10, 1, 100);
@@ -36,9 +46,9 @@ public class ARConfig {
 				.defineInRange("Fallback Auto Reconnect Interval", 2, 1, 60);
 		configBuilder.pop();
 		
-		configBuilder.push("Misc");
+	//	configBuilder.push("Misc");
 		
-		configBuilder.pop();
+	//	configBuilder.pop();
 	}
 
 }

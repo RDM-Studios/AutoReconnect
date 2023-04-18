@@ -2,6 +2,8 @@ package com.rdm.autoreconnect.api;
 
 import javax.annotation.Nullable;
 
+import com.rdm.autoreconnect.manager.ARConfigManager;
+
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.client.multiplayer.ServerData;
 
@@ -24,6 +26,14 @@ public interface IReconnectHandler {
 	 */
 	boolean shouldFallbackReconnect();
 	
+	void resetAutoReconnectAttempts();
+	
+	void resetAutoReconnectFallbackAttempts();
+	
+	void continueAttemptingAutoReconnect();
+	
+	void continueAttemptingFallbackAutoReconnect();
+	
 	/**
 	 * A list of servers which will be blacklisted from autoreconnect functionality (e.g. Hypixel), in order to avoid liability
 	 * for unauthorized client action.
@@ -43,5 +53,22 @@ public interface IReconnectHandler {
 	 */
 	@Nullable
 	ServerData getBackupServerData();
+	
+	/**
+	 * Gets the interval/delay in between each and every attempt to auto-reconnect to the main target server.
+	 * @return The interval in between each attempt to auto-reconnect to the main target server.
+	 */
+	default Integer getAutoReconnectInterval() {
+		return ARConfigManager.MAIN_CLIENT.autoReconnectInterval.get();
+	}
+	
+	/**
+	 * Gets the interval/delay in between each and every attempt to auto-reconnect to the fallback server.
+	 * @return The interval in between each attempt to auto-reconnect to the fallback server.
+	 */
+	default Integer getFallbackAutoReconnectInterval() {
+		if (getBackupServerData() == null) return 0;
+		return ARConfigManager.MAIN_CLIENT.fallbackAutoReconnectInterval.get();
+	}
 	
 }

@@ -6,6 +6,11 @@
 	
 	],
 	"client": [
+		"ClientHandshakePacketListenerMixin",
+		"ConnectScreenMixin",
+		"DisconnectedScreenMixin",
+		"JoinMultiplayerScreenMixin",
+		"MinecraftMixin"
 	],
 	"refmap": "autoreconnect.refmap.json",
 	"injectors": {
