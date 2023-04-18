@@ -94,7 +94,7 @@ public class MultiplayerReconnectHandler implements IReconnectHandler {
 	
 	@Override
 	public boolean shouldReconnect() {
-		return !isTargetServerBlacklisted() && !shouldFallbackReconnect() && !isAttemptingFallbackAutoReconnect() && reconnectAttempts <= ARConfigManager.MAIN_CLIENT.maxReconnectAttempts.get();
+		return !isTargetServerBlacklisted() && !isAttemptingFallbackAutoReconnect() && reconnectAttempts <= ARConfigManager.MAIN_CLIENT.maxReconnectAttempts.get();
 	}
 	
 	@Override
